@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Chatbox</title>
+    <style>
+        /* General Body Styling */
+        body {
+            background-color: #9b9b9b; /* Background color for fallback */
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        /* Top Bar Styling */
+        .top-bar {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Black with transparency */
+            color: white;
+            padding: 15px 30px; /* Adjusted padding to create space for links */
+            text-align: center;
+            font-size: 18px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10; /* Keeps the top bar above other content */
+            display: flex;
+            align-items: center; /* Center items vertically */
+            justify-content: flex-start; /* Move the items to the left */
+        }
+
+        /* Top Bar Links */
+        .top-bar a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-left: 10px; /* Space between links */
+            font-size: 20px;
+        }
+
+        .top-bar a:hover {
+            background-color: #333333; /* Darker shade on hover */
+        }
+
+        /* Profile Image Styling */
+        .profile-image {
+            width: 40px; /* Size of the circular image */
+            height: 40px;
+            border-radius: 50%; /* Makes the image circular */
+            overflow: hidden;
+            margin-right: 10px; /* Space between the image and the "About" link */
+            border: 2px solid white; /* Optional: Adds a white border */
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image fits perfectly within the circle */
+        }
+
+        /* Background Image Styling */
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.pinimg.com/originals/61/8f/08/618f083c61a7460ce0a6064319af41bd.gif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1; /* Ensure it stays behind the content */
+        }
+
+        /* Content Section for Text */
+        .content-text {
+            position: absolute;
+            left: 20px;
+            top: 120px; /* Add some space from the top */
+            color: white;
+            margin: 0;
+            max-width: 60%; /* Limit the width of the text */
+            z-index: 1; /* Ensure the text stays above the background */
+        }
+
+        /* Adjust font sizes for the heading and paragraph */
+        #pc-builder-heading {
+            font-size: 100px; /* Set desired size for the heading */
+        }
+
+        #pc-builder-message {
+            font-size: 25px; /* Set desired size for the paragraph */
+        }
+
+        /* Chatbox Styles */
+        .content-chatbox {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 60px;
+            margin-top: 20px; /* Adjusted to move the chatbox higher */
+            z-index: 0; /* Ensure it stays below the text */
+        }
+
+        iframe {
+            width: 20%; /* Size of the chatbox */
+            height: 80%; /* Height of the chatbox */
+            border: 6px solid #ccc;
+            border-radius: 10px;
+            /* Customizing the border color */
+            border-color: #030303; /* Change this to your preferred color */
+            background-color: #000000; /* Optional: Custom background for the iframe */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="profile-image">
+            <img src="https://i.pinimg.com/originals/90/70/32/9070324cdfc07c68d60eed0c39e77573.gif" alt="Profile Image">
+        </div>
+    </div>
+
+    <!-- Left Text (Message) -->
+    <div class="content-text">
+        <h1 id="pc-builder-heading">PC Builder Assistant</h1>
+        <p id="pc-builder-message">
+            Welcome to our PC building Virtual Assistant. Here, you can get help and tips for building your perfect PC setup!<br><br>
+            From choosing the right components for building your setup, we're here to make your PC building experience easier and more enjoyable.
+        </p>
+    </div>
+
+    <!-- Background Image -->
+    <div class="background-image"></div>
+
+    <!-- Chatbox Content -->
+    <div class="content-chatbox">
+        <iframe src="https://app.chaindesk.ai/agents/cm45nuxvj0g152056o3sv3avq/iframe" frameBorder="0" allow="clipboard-write">
+        </iframe>
+    </div>
+
+</body>
+
+</html>
